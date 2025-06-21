@@ -1,0 +1,46 @@
+{
+  "name": "compman",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "start:dev": "nodemon src/server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "docker:setup": "npm run prisma:generate && npm run prisma:migrate",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write src",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.10.1",
+    "amqplib": "^0.10.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.1",
+    "helmet": "^8.1.0",
+    "http": "^0.0.1-security",
+    "http-status": "^2.1.0",
+    "install": "^0.13.0",
+    "joi": "^17.13.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.10",
+    "npm": "^11.4.2",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-security": "^3.0.1",
+    "prisma": "^6.10.1"
+  }
+}
