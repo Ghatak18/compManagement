@@ -1,0 +1,14 @@
+2025-06-21 12:22:14 [32minfo[39m: Connected to PostgreSQL database
+2025-06-21 12:22:14 [32minfo[39m: Connected to RabbitMQ
+2025-06-21 12:22:14 [32minfo[39m: Server running on port 3000
+2025-06-21 12:31:22 [32minfo[39m: Submitting job job-mc5w4f29-38z9 to queue
+2025-06-21 12:31:22 [31merror[39m: 
+Invalid `prisma.user.findFirst()` invocation in
+C:\Users\sg\Desktop\Virtual Drives\F\MyProjects\compman\src\services\chief.services.js:12:41
+
+   9 async processJob(job) {
+  10   try {
+  11     // Find available manager with least workload
+→ 12     const manager = await prisma.user.findFirst(
+The table `public.User` does not exist in the current database.
+2025-06-21 13:07:48 [32minfo[39m: Shutting down gracefully...

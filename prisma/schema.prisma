@@ -1,3 +1,4 @@
+// schema.prisma
 generator client {
   provider = "prisma-client-js"
 }
@@ -24,6 +25,7 @@ model User {
   assignedTasks   Task[]     @relation("AssignedTasks")
   notifications   Notification[]
 
+  @@map("users")
   @@index([role])
   @@index([managerId])
 }
@@ -43,6 +45,7 @@ model Task {
   updatedAt       DateTime   @updatedAt
   customerJobId   String?
 
+  @@map("tasks")
   @@index([status])
   @@index([assignedToId])
 }
@@ -50,11 +53,13 @@ model Task {
 model Notification {
   id              String     @id @default(uuid())
   message         String
-  type           String
-  isRead         Boolean    @default(false)
-  user           User       @relation(fields: [userId], references: [id])
-  userId         String
-  createdAt      DateTime   @default(now())
+  type            String
+  isRead          Boolean    @default(false)
+  user            User       @relation(fields: [userId], references: [id])
+  userId          String
+  createdAt       DateTime   @default(now())
+
+  @@map("notifications")
 }
 
 enum Role {

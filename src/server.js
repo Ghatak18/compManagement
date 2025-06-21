@@ -2,7 +2,7 @@ const http = require('http');
 const app = require('./app');
 const prisma = require('./services/prisma.service');
 const rabbitMQService = require('./services/rabbitmq.service');
-const chiefService = require('./services/chief.service');
+const chiefService = require('./services/chief.services.js');
 const managerService = require('./services/manager.service');
 const logger = require('./config/logger');
 
